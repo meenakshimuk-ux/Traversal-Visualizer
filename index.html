@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFS/DFS Traversal Visualizer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>BFS/DFS Traversal Visualizer</h1>
+      <div class="controls">
+        <label>
+          Algorithm
+          <select id="algorithm">
+            <option value="bfs">BFS (Queue)</option>
+            <option value="dfs">DFS (Stack)</option>
+          </select>
+        </label>
+        <label>
+          Nodes
+          <input type="number" id="node-count" min="3" max="20" value="9" />
+        </label>
+        <label>
+          Start Node
+          <select id="start-node"></select>
+        </label>
+        <div class="buttons">
+          <button id="btn-start">Start</button>
+          <button id="btn-step">Step</button>
+          <button id="btn-pause">Pause</button>
+          <button id="btn-reset">Reset</button>
+          <button id="btn-randomize">Randomize Edges</button>
+        </div>
+        <label class="speed">
+          Speed
+          <input type="range" id="speed" min="100" max="1500" step="50" value="600" />
+        </label>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="graph-panel">
+        <svg id="graph" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Graph canvas"></svg>
+      </section>
+      <aside class="state-panel">
+        <div class="panel">
+          <h2 id="structure-title">Queue</h2>
+          <ul id="structure" class="list"></ul>
+        </div>
+        <div class="panel">
+          <h2>Visited</h2>
+          <ul id="visited" class="list"></ul>
+        </div>
+        <div class="panel legend">
+          <h2>Legend</h2>
+          <div class="legend-row"><span class="dot unvisited"></span>Unvisited</div>
+          <div class="legend-row"><span class="dot frontier"></span>In Queue/Stack</div>
+          <div class="legend-row"><span class="dot current"></span>Current</div>
+          <div class="legend-row"><span class="dot visited"></span>Visited</div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
